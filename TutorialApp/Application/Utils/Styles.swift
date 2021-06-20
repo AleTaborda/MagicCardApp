@@ -2,7 +2,7 @@
 //  Styles.swift
 //  TutorialApp
 //
-//  Created by usuario on 19/06/2021.
+//  Created by Alejandro Exequiel Taborda on 19/06/2021.
 //
 
 import UIKit

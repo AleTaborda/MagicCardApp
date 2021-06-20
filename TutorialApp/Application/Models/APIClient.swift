@@ -14,35 +14,29 @@ final class APIClient {
     
     static func getCards(page: Int, code: String, completionHandler: @escaping ([Card]) -> Void) {
         let request = AF.request("\(baseUrl)cards?pageSize=10&page=\(page)&set=\(code)")
-        
-        
         request.responseData { response in
             switch response.result {
             case .success(let data):
                 let page = try! JSONDecoder().decode(CardsPage.self, from: data)
                 completionHandler(page.cards)
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+        }
+    }
+    static func getSets(page: Int, completionHandler: @escaping ([Set]) -> Void) {
+        let request = AF.request("\(baseUrl)sets?pageSize=10&page=\(page)")
+        request.responseData { response in
+            switch response.result {
+            case .success(let data):
+                let page = try! JSONDecoder().decode(SetPage.self, from: data)
+                completionHandler(page.sets)
 
             case .failure(let error):
                 print("Error: \(error)")
             }
         }
-
     }
-        static func getSets(page: Int, completionHandler: @escaping ([Set]) -> Void) {
-            let request = AF.request("\(baseUrl)sets?pageSize=10&page=\(page)")
-            
-            request.responseData { response in
-                switch response.result {
-                case .success(let data):
-                    let page = try! JSONDecoder().decode(SetPage.self, from: data)
-                    completionHandler(page.sets)
-
-                case .failure(let error):
-                    print("Error: \(error)")
-                }
-            }
-
-        }
 }
 
 

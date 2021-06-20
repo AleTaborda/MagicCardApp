@@ -7,11 +7,6 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="magic.ttf">
-            <string>Magic:theGathering</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="TutorialApp" customModuleProvider="target">
             <connections>
@@ -26,29 +21,14 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magic" translatesAutoresizingMaskIntoConstraints="NO" id="3dz-dd-Qgm">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVB-qH-A7u">
-                    <rect key="frame" x="70" y="362.66666666666669" width="235" height="87"/>
-                    <fontDescription key="fontDescription" name="Magic:theGathering" family="Magic:the Gathering" pointSize="73"/>
-                    <state key="normal" title="Start">
-                        <color key="titleColor" red="1" green="0.26282611468691419" blue="0.16828763100985034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
-                    </state>
-                    <connections>
-                        <action selector="navigateButtonPressed" destination="-1" eventType="touchUpInside" id="L7K-iU-9cr"/>
-                    </connections>
-                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uVB-qH-A7u" secondAttribute="trailing" constant="70" id="2uJ-Vs-gvf"/>
                 <constraint firstAttribute="trailing" secondItem="3dz-dd-Qgm" secondAttribute="trailing" id="RCP-kj-2Zp"/>
                 <constraint firstItem="3dz-dd-Qgm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="WHF-UB-4hU"/>
                 <constraint firstItem="3dz-dd-Qgm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jF5-qv-rSb"/>
-                <constraint firstItem="uVB-qH-A7u" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="pVe-8W-oKs"/>
                 <constraint firstAttribute="bottom" secondItem="3dz-dd-Qgm" secondAttribute="bottom" id="sMw-Hz-vvf"/>
-                <constraint firstItem="uVB-qH-A7u" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="70" id="vHi-0X-cCb"/>
             </constraints>
             <point key="canvasLocation" x="-120.8" y="16.256157635467982"/>
         </view>

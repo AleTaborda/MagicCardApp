@@ -25,6 +25,7 @@
 		84931A55267D554200B0DD6B /* SingleCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84931A53267D554200B0DD6B /* SingleCardViewController.xib */; };
 		84931A6E267E96A900B0DD6B /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84931A6D267E96A900B0DD6B /* Styles.swift */; };
 		84931A73267F1B2900B0DD6B /* MagicSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84931A72267F1B2900B0DD6B /* MagicSong.mp3 */; };
+		84931A82267FC3AC00B0DD6B /* MusicHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84931A81267FC3AB00B0DD6B /* MusicHelper.swift */; };
 		FA76150025A0CDB600A21105 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7614FF25A0CDB600A21105 /* AppDelegate.swift */; };
 		FA76150225A0CDB600A21105 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA76150125A0CDB600A21105 /* SceneDelegate.swift */; };
 		FA76150425A0CDB600A21105 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA76150325A0CDB600A21105 /* BaseViewController.swift */; };
@@ -53,6 +54,7 @@
 		84931A53267D554200B0DD6B /* SingleCardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleCardViewController.xib; sourceTree = "<group>"; };
 		84931A6D267E96A900B0DD6B /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		84931A72267F1B2900B0DD6B /* MagicSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MagicSong.mp3; sourceTree = "<group>"; };
+		84931A81267FC3AB00B0DD6B /* MusicHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicHelper.swift; sourceTree = "<group>"; };
 		CA78A26DB19027CE6C12315B /* Pods_TutorialApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TutorialApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F634F1CB8BE757866C5DDAC8 /* Pods-TutorialApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorialApp.debug.xcconfig"; path = "Target Support Files/Pods-TutorialApp/Pods-TutorialApp.debug.xcconfig"; sourceTree = "<group>"; };
 		FA7614FC25A0CDB600A21105 /* TutorialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TutorialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +124,7 @@
 				847FC4A72679C14700871BB7 /* Cards.swift */,
 				84931A47267C26FF00B0DD6B /* Sets.swift */,
 				843F6176267BAFB200093D08 /* APIClient.swift */,
+				84931A81267FC3AB00B0DD6B /* MusicHelper.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -167,7 +170,6 @@
 		FA7614FE25A0CDB600A21105 /* TutorialApp */ = {
 			isa = PBXGroup;
 			children = (
-				843F6171267AB10C00093D08 /* Utils */,
 				FA76151425A16C1000A21105 /* Application */,
 				FA76150125A0CDB600A21105 /* SceneDelegate.swift */,
 				FA7614FF25A0CDB600A21105 /* AppDelegate.swift */,
@@ -181,10 +183,11 @@
 		FA76151425A16C1000A21105 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				84931A34267C1C6300B0DD6B /* SetOfCards */,
+				843F6171267AB10C00093D08 /* Utils */,
 				847FC4A62679C12500871BB7 /* Models */,
 				FA76151525A16C1600A21105 /* Base */,
 				FA76151825A16C7B00A21105 /* Main */,
+				84931A34267C1C6300B0DD6B /* SetOfCards */,
 				847FC4912679BBBA00871BB7 /* MagicCards */,
 				84931A50267D548800B0DD6B /* SingleCard */,
 			);
@@ -344,6 +347,7 @@
 				847FC4A32679BDF300871BB7 /* ListOfMagicCardsViewController.swift in Sources */,
 				FA76151B25A170DA00A21105 /* MainViewController.swift in Sources */,
 				847FC4AD2679C39900871BB7 /* MagicCardsTableViewCell.swift in Sources */,
+				84931A82267FC3AC00B0DD6B /* MusicHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

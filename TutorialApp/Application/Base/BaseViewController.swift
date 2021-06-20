@@ -15,4 +15,11 @@ class BaseViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         return nil
     }
+    @objc func showButtonPlay() {
+        MusicHelper.playAndStopMusic()
+    }
+    func addPlayButton() {
+        let playButton = UIBarButtonItem(title: "🎧", style: .plain, target: self, action: #selector(showButtonPlay))
+        navigationItem.rightBarButtonItem = playButton
+    }
 }

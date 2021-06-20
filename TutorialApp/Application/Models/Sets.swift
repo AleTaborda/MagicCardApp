@@ -12,12 +12,13 @@ struct Set: Codable {
     let releaseDate: String
     let code: String
 
+//This part is not necessary because the keys have the same name that the API call
+    
 //    enum CodingKeys: String, CodingKey {
 //        case name
 //        case releaseDate
 //        case code
 //    }
-
 //    init(from decoder: Decoder) throws {
 //        let container = try decoder.container(keyedBy: CodingKeys.self)
 //        name = try container.decode(String.self, forKey: .name)

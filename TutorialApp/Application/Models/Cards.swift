@@ -18,14 +18,14 @@ struct Card: Codable {
     let layout : String?
     let imageUrl: String?
 
-
+//This part is not necessary because the keys have the same name that the API call
+    
 //    enum CodingKeys: String, CodingKey {
 //        case name
 //        case type
 //        case rarity
 //        case imageUrl
 //    }
-//
 //    init(from decoder: Decoder) throws {
 //        let container = try decoder.container(keyedBy: CodingKeys.self)
 //        name = try container.decode(String.self, forKey: .name)
@@ -34,6 +34,7 @@ struct Card: Codable {
 //        imageUrl = try container.decodeIfPresent(String.self, forKey: .imageUrl)
 //    }
 }
+
 struct CardsPage: Codable {
     let cards: [Card]
 }

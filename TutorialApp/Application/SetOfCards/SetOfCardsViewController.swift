@@ -6,23 +6,23 @@
 //
 
 import UIKit
-import AVFoundation
 
-class SetOfCardsViewController: UIViewController {
+class SetOfCardsViewController: BaseViewController {
     
+    //MARK: - Views
     @IBOutlet var tableView: UITableView!
 
+    //MARK: - Attributes
     var sets: [Set] = []
     var page = 1
     var isLoading = false
-    var player: AVAudioPlayer?
-
     
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        addPlayButton()
         configureViewComponents()
-
+        
         let nib = UINib(
             nibName: "SetsTableViewCell",
             bundle: .main
@@ -33,14 +33,10 @@ class SetOfCardsViewController: UIViewController {
         tableView.delegate = self
         
         loadSets(page: page)
-        
     }
     
-    @objc func showButtonPlay() {
-        musicButton()
-    }
-    
-    func loadSets(page: Int) {
+    //MARK: - Private methods
+    private func loadSets(page: Int) {
         isLoading = true
         APIClient.getSets(page: page, completionHandler: { sets in
             self.sets.append(contentsOf: sets)
@@ -49,19 +45,15 @@ class SetOfCardsViewController: UIViewController {
         })
     }
     
+    //MARK: - NavigationController components
     func configureViewComponents() {
-        
         navigationController?.navigationBar.barStyle = .black
         navigationController?.navigationBar.isTranslucent = false
-        
         navigationItem.title = "Set List"
-        musicButton()
-    }
-
+        }
 }
 
-
-
+//MARK: - UITableViewDataSource
 extension SetOfCardsViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -73,15 +65,14 @@ extension SetOfCardsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SetOfCards") as! SetsTableViewCell
-        
         let set = sets[indexPath.row]
         cell.configure(for: set)
-        
         return cell
     }
     
-  }
+}
 
+//MARK: - UITableViewDelegate
 extension SetOfCardsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == sets.count - 5 {
@@ -94,47 +85,10 @@ extension SetOfCardsViewController: UITableViewDelegate {
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let selectedSet = sets[indexPath.row]
-        
         let viewController = ListOfMagicCardsViewController()
         viewController.code = selectedSet.code
         self.navigationController?.pushViewController(viewController, animated: true)
     }
-
-    func musicButton() {
-        let playButton = UIBarButtonItem(title: "🎧", style: .plain, target: self, action: #selector(showButtonPlay))
-        self.navigationItem.rightBarButtonItem = playButton
-        if let player = player, player.isPlaying {
-            //stop playback
-            
-            player.stop()
-        }
-            else {
-                // set up player and play
-                let urlString = Bundle.main.path(forResource: "MagicSong", ofType: "mp3")
-            
-                do {
-                    try AVAudioSession.sharedInstance().setMode(.default)
-                    try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
-            
-                    guard let urlString = urlString else {
-                        return
-                    }
-            
-                    player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
-            
-                    guard let player = player else  {
-                        return
-                    }
-            
-                    player.play()
-                }
-                catch {
-                    print("Error")
-                }
-            }
-        }
-    
 }
 
