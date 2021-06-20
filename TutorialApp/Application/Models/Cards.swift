@@ -8,15 +8,16 @@
 import UIKit
 
 struct Card: Codable {
-    let name: String
-    let type: String
-    let rarity: String
-    let manaCost: String
-    let text: String
+    let name: String?
+    let type: String?
+    let rarity: String?
+    let artist: String?
+    let text: String?
     let power: String?
     let toughness: String?
-    let layout : String
+    let layout : String?
     let imageUrl: String?
+
 
 //    enum CodingKeys: String, CodingKey {
 //        case name

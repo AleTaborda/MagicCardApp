@@ -7,20 +7,21 @@
 
 import UIKit
 import Kingfisher
+import AVFoundation
 
 class SingleCardViewController: UIViewController {
     
     var card: Card!
+    var player: AVAudioPlayer?
     
     @IBOutlet var cardImageView: UIImageView!
-    @IBOutlet var cardNameLabel: UILabel!
-//    @IBOutlet var cardTypeLabel: UILabel!
-//    @IBOutlet var cardRarityLabel: UILabel!
-//    @IBOutlet var cardManaCostLabel: UILabel!
-//    @IBOutlet var cardPowerLabel: UILabel!
-//    @IBOutlet var cardToughnessLabel: UILabel!
-//    @IBOutlet var cardLayoutLabel: UILabel!
-//    @IBOutlet var cardTextLabel: UILabel!
+    @IBOutlet var cardTypeLabel: UILabel!
+    @IBOutlet var cardRarityLabel: UILabel!
+    @IBOutlet var cardArtistLabel: UILabel!
+    @IBOutlet var cardPowerLabel: UILabel!
+    @IBOutlet var cardToughnessLabel: UILabel!
+    @IBOutlet var cardLayoutLabel: UILabel!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,18 +29,22 @@ class SingleCardViewController: UIViewController {
         cardImageView.kf.cancelDownloadTask()
       
         self.configure(for: card)
-        
+        musicButton()
     }
-//
+    
+    @objc func showButtonPlay() {
+        musicButton()
+    }
+    
     func configure(for card: Card) {
-//        cardNameLabel.text = card.name
-//        cardTypeLabel.text = card.type
-//        cardRarityLabel.text = card.rarity
-//        cardManaCostLabel.text = card.manaCost
-//        cardPowerLabel.text = card.power
-//        cardToughnessLabel.text = card.toughness
-//        cardLayoutLabel.text = card.layout
-//        cardTextLabel.text = card.text
+        navigationItem.title = card.name?.capitalized
+        cardTypeLabel.text = "Type: \(card.type ?? "No Data Available For This Card")"
+        cardRarityLabel.text = "Rarity: \(card.rarity ?? "No Data Available For This Card")"
+        cardArtistLabel.text = "Artist: \(card.artist ?? "No Data Available For This Card")"
+        cardPowerLabel.text = "Power: \(card.power ?? "-")"
+        cardToughnessLabel.text = "Toughness: \(card.toughness ?? "-")"
+        cardLayoutLabel.text = "Layout: \(card.layout ?? "No Data Available For This Card")"
+ 
 
         if let imageUrl = URL(string: card.imageUrl ?? "") {
             cardImageView.kf.setImage(with: imageUrl)
@@ -51,6 +56,40 @@ class SingleCardViewController: UIViewController {
             cardImageView.layer.cornerRadius = 2.0
         }
     }
+    
+    func musicButton() {
+        let playButton = UIBarButtonItem(title: "🎧", style: .plain, target: self, action: #selector(showButtonPlay))
+        self.navigationItem.rightBarButtonItem = playButton
+        if let player = player, player.isPlaying {
+            //stop playback
+            
+            player.stop()
+        }
+            else {
+                // set up player and play
+                let urlString = Bundle.main.path(forResource: "MagicSong", ofType: "mp3")
+            
+                do {
+                    try AVAudioSession.sharedInstance().setMode(.default)
+                    try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+            
+                    guard let urlString = urlString else {
+                        return
+                    }
+            
+                    player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
+            
+                    guard let player = player else  {
+                        return
+                    }
+            
+                    player.play()
+                }
+                catch {
+                    print("Error")
+                }
+            }
+        }
 }
 
 

@@ -50,7 +50,7 @@
                 <constraint firstAttribute="bottom" secondItem="3dz-dd-Qgm" secondAttribute="bottom" id="sMw-Hz-vvf"/>
                 <constraint firstItem="uVB-qH-A7u" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="70" id="vHi-0X-cCb"/>
             </constraints>
-            <point key="canvasLocation" x="-120.28985507246378" y="16.741071428571427"/>
+            <point key="canvasLocation" x="-120.8" y="16.256157635467982"/>
         </view>
     </objects>
     <resources>

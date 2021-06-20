@@ -7,10 +7,21 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="magic.ttf">
+            <string>Magic:theGathering</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SingleCardViewController" customModule="TutorialApp" customModuleProvider="target">
             <connections>
-                <outlet property="cardImageView" destination="qHl-ye-cBx" id="vas-kJ-JvZ"/>
+                <outlet property="cardArtistLabel" destination="Rz5-OZ-ovb" id="uCL-pi-DTZ"/>
+                <outlet property="cardImageView" destination="qHl-ye-cBx" id="79j-2x-R89"/>
+                <outlet property="cardLayoutLabel" destination="zib-uY-ddb" id="sXP-YK-DuH"/>
+                <outlet property="cardPowerLabel" destination="ZCd-lM-DJj" id="UhT-NY-h9R"/>
+                <outlet property="cardRarityLabel" destination="yFC-44-gXQ" id="JSK-OU-TuX"/>
+                <outlet property="cardToughnessLabel" destination="v7Z-xG-Wvr" id="EIM-8W-iEW"/>
+                <outlet property="cardTypeLabel" destination="LLJ-rc-afc" id="Vxu-Wo-jwN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,16 +31,61 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qHl-ye-cBx">
-                    <rect key="frame" x="0.0" y="54" width="414" height="508"/>
+                    <rect key="frame" x="0.0" y="74" width="414" height="488"/>
                 </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iIs-bQ-zlj">
+                    <rect key="frame" x="20" y="602" width="374" height="240"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLJ-rc-afc">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
+                            <fontDescription key="fontDescription" name="Magic:theGathering" family="Magic:the Gathering" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rarity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFC-44-gXQ">
+                            <rect key="frame" x="0.0" y="40" width="374" height="40"/>
+                            <fontDescription key="fontDescription" name="Magic:theGathering" family="Magic:the Gathering" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Power" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCd-lM-DJj">
+                            <rect key="frame" x="0.0" y="80" width="374" height="40"/>
+                            <fontDescription key="fontDescription" name="Magic:theGathering" family="Magic:the Gathering" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toughness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7Z-xG-Wvr">
+                            <rect key="frame" x="0.0" y="120" width="374" height="40"/>
+                            <fontDescription key="fontDescription" name="Magic:theGathering" family="Magic:the Gathering" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Layout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zib-uY-ddb">
+                            <rect key="frame" x="0.0" y="160" width="374" height="40"/>
+                            <fontDescription key="fontDescription" name="Magic:theGathering" family="Magic:the Gathering" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rz5-OZ-ovb">
+                            <rect key="frame" x="0.0" y="200" width="374" height="40"/>
+                            <fontDescription key="fontDescription" name="Magic:theGathering" family="Magic:the Gathering" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="iIs-bQ-zlj" secondAttribute="bottom" constant="20" id="1Dg-uj-DDE"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="qHl-ye-cBx" secondAttribute="bottom" constant="300" id="7DW-5e-BKo"/>
+                <constraint firstItem="iIs-bQ-zlj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="CzU-wA-NVt"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qHl-ye-cBx" secondAttribute="trailing" id="ElN-ut-iIW"/>
-                <constraint firstItem="qHl-ye-cBx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="RpA-yK-keW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iIs-bQ-zlj" secondAttribute="trailing" constant="20" id="LXI-QH-hqc"/>
+                <constraint firstItem="qHl-ye-cBx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="RpA-yK-keW"/>
                 <constraint firstItem="qHl-ye-cBx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="YHO-mJ-pmP"/>
+                <constraint firstItem="iIs-bQ-zlj" firstAttribute="top" secondItem="qHl-ye-cBx" secondAttribute="bottom" constant="40" id="kCK-Jj-WO1"/>
             </constraints>
             <point key="canvasLocation" x="-839.13043478260875" y="29.464285714285712"/>
         </view>

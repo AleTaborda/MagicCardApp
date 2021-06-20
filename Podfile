@@ -9,4 +9,6 @@ target 'TutorialApp' do
 
   pod 'Alamofire', '~> 5.4'
   pod 'Kingfisher'
+  pod 'TransitionButton'
+
 end

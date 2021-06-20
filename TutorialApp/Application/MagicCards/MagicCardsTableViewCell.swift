@@ -12,6 +12,7 @@ class MagicCardsTableViewCell: UITableViewCell {
 
     @IBOutlet var cardNameLabel: UILabel!
     @IBOutlet var cardTypeLabel: UILabel!
+    @IBOutlet var cardRarityLabel: UILabel!
     @IBOutlet var cardImageView: UIImageView!
    
     override func prepareForReuse() {
@@ -24,6 +25,7 @@ class MagicCardsTableViewCell: UITableViewCell {
     func configure(for card: Card) {
         cardNameLabel.text = card.name
         cardTypeLabel.text = card.type
+        cardRarityLabel.text = card.rarity
         
         if let imageUrl = URL(string: card.imageUrl ?? "") {
             cardImageView.kf.setImage(with: imageUrl)

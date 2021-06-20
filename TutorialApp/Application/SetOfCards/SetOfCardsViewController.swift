@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class SetOfCardsViewController: UIViewController {
     
@@ -14,11 +15,13 @@ class SetOfCardsViewController: UIViewController {
     var sets: [Set] = []
     var page = 1
     var isLoading = false
+    var player: AVAudioPlayer?
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureViewComponents()
 
         let nib = UINib(
             nibName: "SetsTableViewCell",
@@ -33,7 +36,9 @@ class SetOfCardsViewController: UIViewController {
         
     }
     
-
+    @objc func showButtonPlay() {
+        musicButton()
+    }
     
     func loadSets(page: Int) {
         isLoading = true
@@ -42,6 +47,15 @@ class SetOfCardsViewController: UIViewController {
             self.tableView.reloadData()
             self.isLoading = false
         })
+    }
+    
+    func configureViewComponents() {
+        
+        navigationController?.navigationBar.barStyle = .black
+        navigationController?.navigationBar.isTranslucent = false
+        
+        navigationItem.title = "Set List"
+        musicButton()
     }
 
 }
@@ -88,5 +102,39 @@ extension SetOfCardsViewController: UITableViewDelegate {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 
+    func musicButton() {
+        let playButton = UIBarButtonItem(title: "🎧", style: .plain, target: self, action: #selector(showButtonPlay))
+        self.navigationItem.rightBarButtonItem = playButton
+        if let player = player, player.isPlaying {
+            //stop playback
+            
+            player.stop()
+        }
+            else {
+                // set up player and play
+                let urlString = Bundle.main.path(forResource: "MagicSong", ofType: "mp3")
+            
+                do {
+                    try AVAudioSession.sharedInstance().setMode(.default)
+                    try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+            
+                    guard let urlString = urlString else {
+                        return
+                    }
+            
+                    player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
+            
+                    guard let player = player else  {
+                        return
+                    }
+            
+                    player.play()
+                }
+                catch {
+                    print("Error")
+                }
+            }
+        }
+    
 }
 
