@@ -248,7 +248,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FA7614F725A0CDB600A21105 /* Build configuration list for PBXProject "MagicCardProyect" */;
+			buildConfigurationList = FA7614F725A0CDB600A21105 /* Build configuration list for PBXProject "MagicCardProject" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -524,7 +524,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FA7614F725A0CDB600A21105 /* Build configuration list for PBXProject "MagicCardProyect" */ = {
+		FA7614F725A0CDB600A21105 /* Build configuration list for PBXProject "MagicCardProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA76150E25A0CDB800A21105 /* Debug */,

@@ -12,7 +12,7 @@ import TransitionButton
 final class MainViewController: BaseViewController {
     
     //MARK: - Attributes
-    let button = TransitionButton(frame: CGRect(x: 80, y: 400, width: 250, height: 50))
+    let button = TransitionButton(frame: CGRect(x: 0, y: 0, width: 250, height: 50))
     
     //MARK: - Views
     @objc func didTapButton() {
@@ -48,6 +48,7 @@ final class MainViewController: BaseViewController {
         button.setTitle("START", for: .normal)
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         button.spinnerColor = .white
+        button.center = self.view.center
         self.view.addSubview(button)
     }
 }

@@ -17,7 +17,7 @@
                BlueprintIdentifier = "FA7614FB25A0CDB600A21105"
                BuildableName = "TutorialApp.app"
                BlueprintName = "TutorialApp"
-               ReferencedContainer = "container:MagicCardProyect.xcodeproj">
+               ReferencedContainer = "container:MagicCardProject.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,7 +47,7 @@
             BlueprintIdentifier = "FA7614FB25A0CDB600A21105"
             BuildableName = "TutorialApp.app"
             BlueprintName = "TutorialApp"
-            ReferencedContainer = "container:MagicCardProyect.xcodeproj">
+            ReferencedContainer = "container:MagicCardProject.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "FA7614FB25A0CDB600A21105"
             BuildableName = "TutorialApp.app"
             BlueprintName = "TutorialApp"
-            ReferencedContainer = "container:MagicCardProyect.xcodeproj">
+            ReferencedContainer = "container:MagicCardProject.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
