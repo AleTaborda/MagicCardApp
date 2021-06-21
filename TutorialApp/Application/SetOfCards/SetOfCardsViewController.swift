@@ -85,6 +85,7 @@ extension SetOfCardsViewController: UITableViewDelegate {
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let selectedSet = sets[indexPath.row]
         let viewController = ListOfMagicCardsViewController()
         viewController.code = selectedSet.code

@@ -85,6 +85,7 @@ extension ListOfMagicCardsViewController: UITableViewDelegate {
         return 148
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let selectedCard = cards[indexPath.row]
         let viewController = SingleCardViewController()
         viewController.card = selectedCard
