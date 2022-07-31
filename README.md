@@ -4,7 +4,7 @@ Magic Card App is a small demo application made on Swift.
 
 The purpose of this project is practicing API calls and designs in Xcode, aswell as using different Cocoapods.
 The Networking was made with Alamofire.
-The "TransitionButton" pod was use for animations in de the Start Button. Kingfisher was use for fetching images from the API to the project and to give some effects to them.
+The "TransitionButton" pod was use for animations in the Start Button. Kingfisher was use for fetching images from the API to the project and to give some effects to them.
 The Music function was created with a library that exists in Xcode "AVFoundation"
 
 
